@@ -9,7 +9,7 @@
 <title>main.jsp</title>
  <script type="text/javaScript">
  function deleteConfirm(userid){
-	 var and =  confirm("정말로 삭제할까요?");
+	 var ans =  confirm("정말로 삭제할까요?");
 	 if(ans){
 		 location.href="delete.do?id=" + userid;
 	 }else{

@@ -70,7 +70,6 @@ public class UpdateServlet extends HttpServlet {
    
 
    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-      
          request.setCharacterEncoding("UTF-8");
          response.setCharacterEncoding("UTF-8");
          
@@ -88,20 +87,19 @@ public class UpdateServlet extends HttpServlet {
          String name =  request.getParameter("name");
          String pwd =  request.getParameter("pwd");
          String phone =  request.getParameter("phone");
-         String sql = "update members set id = ?, name = ?, pwd = ? , phone = ?  where id = ?";
+         String sql = "update members set name = ?, pwd = ? , phone = ?  where id = ?";
          
          try {
             Class.forName(driver);
             con = DriverManager.getConnection(url,id,pw);
             pstmt = con.prepareStatement(sql);
-            pstmt.setString(1, userId);
-            pstmt.setString(2, name);
-            pstmt.setString(3, pwd);
-            pstmt.setString(4, phone);
-            pstmt.setString(5, userId);
             
-            pstmt.executeUpdate();
-         
+            pstmt.setString(1, name);
+            pstmt.setString(2, pwd);
+            pstmt.setString(3, phone);
+            pstmt.setString(4, userId);
+            
+            pstmt.executeUpdate();         
             
          } catch (ClassNotFoundException  e) { e.printStackTrace();
          } catch (SQLException e) { e.printStackTrace();

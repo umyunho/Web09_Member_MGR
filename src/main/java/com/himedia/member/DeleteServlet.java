@@ -30,7 +30,7 @@ public class DeleteServlet extends HttpServlet {
 		   String id="root";
 		   String pw="adminuser";
 		   String userid = request.getParameter("id");
-		   String sql = "delete * from MEMBERS where id=?";
+		   String sql = "delete from MEMBERS where id=?";
 		   try {
 		         Class.forName(driver);
 		         con = DriverManager.getConnection(url, id, pw);
@@ -49,6 +49,8 @@ public class DeleteServlet extends HttpServlet {
 		         request.setAttribute("delete", "ok");
 
 		      }
+	         response.sendRedirect("start.do");
+
 	}
 
 

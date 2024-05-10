@@ -19,9 +19,9 @@
       <tr>
       <tr><td>비밀번호</td>   <td><input type="password" name="pwd" size="20"></td></tr>
       <td>이름</td>
-      <td><input type="text" name="name" size="20" value></td>
+      <td><input type="text" name="name" size="20" value="${member.name }"></td>
       </tr>
-      <tr><td>전화번호</td>   <td><input type="text" name="phone" size="20"></td></tr>
+      <tr><td>전화번호</td>   <td><input type="text" name="phone" size="20" value="${member.phone }"></td></tr>
       <tr><td colspan="2">
          <input type="submit" value="전송">
          <input type="reset" value="취소">
